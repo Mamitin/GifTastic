@@ -1,4 +1,4 @@
-//Initial array of athletes
+//Initial array of famous athletes
 
 //Create function re-renders the HTML to display the appropriate content
 
