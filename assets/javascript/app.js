@@ -1,8 +1,10 @@
 //Initial array of famous athletes
+var athletes = ["Micael Jordon", "Tiger Woods", "Marshawn Lynch", "Kobe Bryant", "Clay Thompson", "Eli Manning"]
 
 //Create function re-renders the HTML to display the appropriate content
 
 //Performing an AJAX request with the queryURL
+
 //Creating a div to hold the athlete
 
 
