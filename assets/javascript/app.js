@@ -1,20 +1,46 @@
 //Initial array of famous athletes
-var athletes = ["Micael Jordon", "Tiger Woods", "Marshawn Lynch", "Kobe Bryant", "Clay Thompson", "Eli Manning"]
+var topics = ["Michael Jordon", "Tiger Woods", "Marshawn Lynch", "Kobe Bryant", "Klay Thompson", "Eli Manning", "Lebron James", "Blake Griffith", "David Beckham", "Reggie Bush"];
 
 //Create function re-renders the HTML to display the appropriate content
+function displayTopics();
+
+
+//Create queryURL
+var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + athletes + "&api_key=rqcp4alraOM85IAywNsBaaG7PoyVJBV2=10"
 
 //Performing an AJAX request with the queryURL
-
-//Creating a div to hold the athlete
-
-
-//Storing the data from the AJAX request in the results
+    $.ajax ({
+        URL: queryURL,
+        method: "get"
+//Storing the data from the AJAX request in the response
+    }).then(function(response) {
+        console.log(response);
+                
 //Looping through each result time
-//Creating and storing a div tag
-//Creating a paragraph tag with the results item's rating
-//Creating and storing an image tag
-//Setting the src attribute of the image to a property pulled off the result item's rating
-//Appending the image
+for (var i = 0; i <=result.length; i++) {
+    //Creating and storing a div tag
+        var gifDiv = $("<div>").attr("class", "gifArea");
+        console.log();
+        //Creating and storing an image tag
+        var gifImage = $("<>");
+        //Setting the attribute of the image
+        gifImage.attr("class", "img-gif");
+        //Set the image/gif load still
+        gifImage.attr('src', results[i].images.fixed_height_still.url);
+        gifImage.attr("data-still", results[i].images.fixed_height_still.url);
+        gifImage.attr("data-animate", results[i].images.fixed_height.url);
+        gifImage.attr("data-state", "still");
+        
+        //property pulled off the result item's rating
+        var rating = $("<p>").text(" rating: " + results[i].rating).attr("class", "rating");
+        
+        //Appending the image
+         gifDiv.append(gifImage);
+         gifDiv.append(rating);
+
+        
+        //Creating a div to hold the athletes
+        $("#button-area")
 
 //Function for displaying athletes data
 //Deleting the previous gifs
