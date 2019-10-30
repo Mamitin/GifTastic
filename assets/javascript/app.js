@@ -77,16 +77,19 @@ function makeButtons() {
 }
 
 
-
+//Create for when user searches new topic
+//Eventlistener to add gif
+$("#add-gif").on("click", function(event) {
     //Deleting the previous gifs
-
-
-
-
-//Create function for when button is clicked
+    event.preventDefault();
 //Grab input from textbox
+var athletes = $("#gif-input").val().trim();
 //Add input from textbox to array
+topics.push(athletes);
+makeButtons();
+});
 
+//Calling document on click to diplay initially on page
+$(document).on("click", ".athletes", displayTopics);
 
-
-/*Calling function to diplay initial*/
+makeButtons();
