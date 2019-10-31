@@ -7,22 +7,23 @@ var topics = ["Michael Jordon", "Tiger Woods", "Marshawn Lynch", "Kobe Bryant", 
 //Create function re-renders the HTML to display the appropriate content
 function displayAthletesGif() {
     var athletes = $(this).attr("data-athletes");
-    console.log(athletes);
+    
     //Create queryURL
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + athletes + "&api_key=rqcp4alraOM85IAywNsBaaG7PoyVJBV2&limit=10&offset=0&rating=PG&lang=en"
-    console.log(queryURL);
-    
+
     //Performing an AJAX request with the queryURL
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log(response);
 
-       var results = response.data;
+        var results = response.data;
+
+        //Clear previous gifs
+        $(".gifDiv").empty();
 
         //Looping through each 
-        for (var i = 0; i <= results.length; i++) {
+        for (var i = 0; i < results.length; i++) {
             //Creating and storing a div tag
             var gifDiv = $("<div>").attr("class", "gifDiv float-md-left");
             //console.log();
@@ -37,7 +38,7 @@ function displayAthletesGif() {
             gifImage.attr("data-state", "still");
 
             //property pulled off the result item's rating
-            var rating = $("<p>").text(" rating: " + results[i].rating).attr("class", "rating");
+            var rating = $("<p>").text(" Rating: " + results[i].rating).attr("class", "rating");
 
             //Appending the image
             gifDiv.append(gifImage);
@@ -47,9 +48,6 @@ function displayAthletesGif() {
             $(".gif-container").prepend(gifDiv);
 
         }
-
-        
-        console.log("hello");
     });
 };
 
@@ -77,14 +75,14 @@ function makeButtons() {
         //Dynamically gernerate buttons for each athletes
         var gifButton = $("<button>");
         //Adding a attr to the buttons
-        gifButton.attr("type", "button").attr("class", "btn btn-dark athletes").text(topics[i]).attr("data-athletes", topics[i]).attr("id", "gif-button");
+        gifButton.attr("type", "button").attr("class", "btn btn-dark mr-2 mt-2 athletes").text(topics[i]).attr("data-athletes", topics[i]).attr("id", "gif-button");
         //Append button to the div
         $("#gif-buttons").append(gifButton);
     }
 }
 
 
-//Create for when user searches new topic
+//Create for when user searches new athlete
 //Eventlistener to add gif
 $("#add-gif").on("click", function (event) {
     //Deleting the previous gifs
