@@ -19,7 +19,7 @@ text-align: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-top: 20px;
-    /*filter: drop-shadow(15px 5px 4px grey);*/
+    filter: drop-shadow(0 0 0.75rem darkblue);
     
 }
 
@@ -30,4 +30,5 @@ text-align: center;
 
 .rating {
     color: white;
+    font-weight: bold;
 }
