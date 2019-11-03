@@ -18,7 +18,7 @@ In this assignment, I used the GIPHY API to make a dynamic web page that populat
 <img src="/assets/images/gifTastic.gif" width="500px" height="250px"/>
 
 ## Important code snippit: 
-This particaular code generates the timer for the game.
+This particaular code shows the usage of the Giphy API.
 
 <img src="assets/images/snippit.PNG">
 
