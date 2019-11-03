@@ -44,7 +44,7 @@ This particaular code generates the timer for the game.
 - [Bootstrap Portfolio](https://github.com/Mamitin/Bootstrap-Portfolio/blob/master/index.html)
 - [Crytal Collector](https://mamitin.github.io/unit-4-game/blob/master/index.html)
 - [Simpson Trivia Game](https://github.com/Mamitin/TriviaGame)
-- [GifTastic]()
+- [GifTastic](https://github.com/Mamitin/GifTastic)
 
 ## Contributing
 Please find me on [Linkedin](https://www.linkedin.com/in/monica-amitin-58635475/).
